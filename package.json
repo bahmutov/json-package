@@ -2,6 +2,11 @@
   "name": "json-package",
   "description": "Fetches any property from package.json using short prefix `jso dep` is same as `cat package.json | grep dependencies`",
   "main": "src/json-package.js",
+  "bin": {
+    "jso": "bin/jso.js"
+  },
+  "preferGlobal": true,
+  "version": "0.0.0-semantic-release",
   "scripts": {
     "test": "mocha --harmony src/*-spec.js",
     "lint": "standard bin/*.js src/*.js",
