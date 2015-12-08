@@ -55,5 +55,5 @@ module.exports = {
   loadJson: loadJson,
   jsonPackage: jsonPackage,
   find: findScripts,
-  printNames: findScripts
+  printNames: printNames
 }
