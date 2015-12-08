@@ -1,0 +1,23 @@
+#!/usr/bin/env node --harmony
+
+'use strict'
+
+const help = [
+  'USE: jso <property name prefix>',
+  '\t"jso v" === "cat package.json | grep version"'
+].join('\n')
+
+const jsonPackage = require('..')
+
+require('simple-bin-help')({
+  minArguments: 3,
+  packagePath: __dirname + '/../package.json',
+  help: help,
+  noExit: true,
+  onFail: function () {
+    process.exit(0)
+  }
+})
+
+const prefix = process.argv[2]
+jsonPackage(prefix)
