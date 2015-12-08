@@ -3,6 +3,7 @@
   "description": "Fetches any property from package.json using short prefix `jso dep` is same as `cat package.json | grep dependencies`",
   "main": "src/json-package.js",
   "bin": {
+    "j": "bin/jso.js",
     "jso": "bin/jso.js"
   },
   "preferGlobal": true,
@@ -13,7 +14,8 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
-    "all": "node --harmony bin/jso.js"
+    "all": "node --harmony bin/jso.js",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
   },
   "repository": {
     "type": "git",

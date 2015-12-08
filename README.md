@@ -15,11 +15,14 @@
 
     npm install -g json-package
 
+Installs shortcuts "jso" and "j"
+
 Then use `jso <property name prefix>` to show any property from `package.json`
 
 Example: show version
 
     jso v
+    j v
 
 If there are multiple properties starting with the same prefix, the `jso` will show choices
 
