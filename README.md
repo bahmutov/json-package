@@ -25,7 +25,8 @@ If there are multiple properties starting with the same prefix, the `jso` will s
 
 ## Related
 
-* [npm-quick-run](https://github.com/bahmutov/npm-quick-run)
+* [npm-quick-run](https://github.com/bahmutov/npm-quick-run) - run NPM script command by prefix
+* [json](https://www.npmjs.com/package/json) - powerful display and processig for JSON files
 
 ### Small print
 
