@@ -4,7 +4,7 @@
 
 const help = [
   'USE: jso <property name prefix>',
-  '\t"jso v" === "cat package.json | grep version"'
+  '    "jso v" === "cat package.json | grep version"'
 ].join('\n')
 
 const jsonPackage = require('..').jsonPackage
