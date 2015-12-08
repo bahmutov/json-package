@@ -15,6 +15,6 @@ require('./package.json', {
 
 /* global describe, it */
 describe('jso', () => {
-  const jso = require('./json-package')
+  const jso = require('./json-package').jsonPackage
   it('is a function', () => la(check.fn(jso)))
 })

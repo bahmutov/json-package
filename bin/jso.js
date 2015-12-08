@@ -7,7 +7,7 @@ const help = [
   '\t"jso v" === "cat package.json | grep version"'
 ].join('\n')
 
-const jsonPackage = require('..')
+const jsonPackage = require('..').jsonPackage
 
 require('simple-bin-help')({
   minArguments: 3,
@@ -15,6 +15,7 @@ require('simple-bin-help')({
   help: help,
   noExit: true,
   onFail: function () {
+    jsonPackage()
     process.exit(0)
   }
 })
