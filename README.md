@@ -26,6 +26,10 @@ Example: show version
 
 If there are multiple properties starting with the same prefix, the `jso` will show choices
 
+## Show in action
+
+[![asciicast](https://asciinema.org/a/31447.png)](https://asciinema.org/a/31447)
+
 ## Related
 
 * [npm-quick-run](https://github.com/bahmutov/npm-quick-run) - run NPM script command by prefix
