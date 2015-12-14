@@ -30,6 +30,14 @@ If there are multiple properties starting with the same prefix, the `jso` will s
 
 [![asciicast](https://asciinema.org/a/31447.png)](https://asciinema.org/a/31447)
 
+## Differences from `npm view <package name> [property]`
+
+There is a command [npm view](https://docs.npmjs.com/cli/view) that can do the same -
+and more. I prefer using `json-package` for these reasons
+
+* `json-package` only does the local lookup, thus faster and less typing
+* `json-package` matches property by prefix, again less typing
+
 ## Related
 
 * [npm-quick-run](https://github.com/bahmutov/npm-quick-run) - run NPM script command by prefix
