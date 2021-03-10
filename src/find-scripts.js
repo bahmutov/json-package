@@ -1,23 +1,16 @@
+// @ts-check
 const la = require('lazy-ass')
 const is = require('check-more-types')
-
-function startsWith(prefix, str) {
-  console.assert(typeof str === 'string', 'expected string', str)
-  return str.indexOf(prefix) === 0
-}
-
-function sameLength (a, b) {
-  return a.length === b.length
-}
-
-function matchesExactly (prefix, str) {
-  return startsWith(prefix, str) &&
-    sameLength(prefix, str)
-}
+const {
+  isFuzzyMatch, findFuzzyMatches, matchesExactly, startsWith } = require('./utils')
 
 function findScripts(prefix, scripts) {
   la(is.unemptyString(prefix), 'expected unempty string prefix', prefix)
   la(is.object(scripts), 'expected an object of scripts', scripts)
+
+  if (isFuzzyMatch(prefix)) {
+    return findFuzzyMatches(prefix, scripts)
+  }
 
   const labels = Object.keys(scripts)
   const matchesExactlyPrefix = matchesExactly.bind(null, prefix)
