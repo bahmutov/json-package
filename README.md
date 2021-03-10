@@ -5,7 +5,7 @@
 
 [![NPM][json-package-icon] ][json-package-url]
 
-[![Build status][json-package-ci-image] ][json-package-ci-url]
+[![ci status][ci image]][ci url]
 [![dependencies][json-package-dependencies-image] ][json-package-dependencies-url]
 [![devdependencies][json-package-devdependencies-image] ][json-package-devdependencies-url]
 
@@ -50,8 +50,8 @@ and more. I prefer using `json-package` for these reasons
 Author: Gleb Bahmutov &copy; 2015
 
 * [@bahmutov](https://twitter.com/bahmutov)
-* [glebbahmutov.com](http://glebbahmutov.com)
-* [blog](http://glebbahmutov.com/blog/)
+* [glebbahmutov.com](https://glebbahmutov.com)
+* [blog](https://glebbahmutov.com/blog/)
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
@@ -87,8 +87,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 [json-package-icon]: https://nodei.co/npm/json-package.png?downloads=true
 [json-package-url]: https://npmjs.org/package/json-package
-[json-package-ci-image]: https://travis-ci.org/bahmutov/json-package.png?branch=master
-[json-package-ci-url]: https://travis-ci.org/bahmutov/json-package
+[ci image]: https://github.com/bahmutov/json-package/workflows/ci/badge.svg?branch=master
+[ci url]: https://github.com/bahmutov/json-package/actions
 [json-package-dependencies-image]: https://david-dm.org/bahmutov/json-package.png
 [json-package-dependencies-url]: https://david-dm.org/bahmutov/json-package
 [json-package-devdependencies-image]: https://david-dm.org/bahmutov/json-package/dev-status.png
