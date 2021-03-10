@@ -1,8 +1,22 @@
 /* global describe, context, it */
 const { expect } = require('chai')
-const { splitToWords, findFuzzyMatches } = require('./utils')
+const { splitToWords, findFuzzyMatches, isFuzzyMatch } = require('./utils')
 
 describe('utils', () => {
+  context('isFuzzyMatch', () => {
+    it('flags :', () => {
+      expect(isFuzzyMatch('t:f')).to.be.true
+    })
+
+    it('flags -', () => {
+      expect(isFuzzyMatch('t:f')).to.be.true
+    })
+
+    it('skips =', () => {
+      expect(isFuzzyMatch('t=f')).to.be.false
+    })
+  })
+
   context('splitToWords', () => {
     it('splits by :', () => {
       const parts = splitToWords('c:r')

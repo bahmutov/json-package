@@ -16,7 +16,7 @@ function matchesExactly (prefix, str) {
     sameLength(prefix, str)
 }
 
-const isFuzzyMatch = (str) => str.includes('-')
+const isFuzzyMatch = (str) => str.includes('-') || str.includes(':')
 
 const splitToWords = (str) => str.split(/[-:]/g)
 
