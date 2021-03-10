@@ -17,6 +17,7 @@ function matchesExactly (prefix, str) {
 
 function findScripts(prefix, scripts) {
   la(is.unemptyString(prefix), 'expected unempty string prefix', prefix)
+  la(is.object(scripts), 'expected an object of scripts', scripts)
 
   const labels = Object.keys(scripts)
   const matchesExactlyPrefix = matchesExactly.bind(null, prefix)
