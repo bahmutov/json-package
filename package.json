@@ -11,11 +11,12 @@
   "scripts": {
     "test": "node --harmony node_modules/.bin/rocha src/*-spec.js",
     "lint": "standard bin/*.js src/*.js",
+    "format": "npm run lint -- --fix",
     "semantic-release": "semantic-release",
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
     "all": "node --harmony bin/jso.js",
-    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
+    "size": "npm pack --dry"
   },
   "repository": {
     "type": "git",
@@ -48,7 +49,7 @@
     "really-need": "1.7.2",
     "rocha": "1.6.1",
     "semantic-release": "^17.4.1",
-    "standard": "5.4.1"
+    "standard": "16.0.3"
   },
   "dependencies": {
     "check-more-types": "2.24.0",

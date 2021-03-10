@@ -7,7 +7,7 @@ function printNames (label, names, log) {
   if (!log) {
     log = console.error.bind(console)
   }
-  var sorted = names.sort()
+  let sorted = names.sort()
   const joiner = isMany(names) ? '\n - ' : ', '
   if (isMany(sorted)) {
     sorted = [''].concat(sorted)

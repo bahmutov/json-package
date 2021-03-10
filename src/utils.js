@@ -2,7 +2,7 @@
 const la = require('lazy-ass')
 const is = require('check-more-types')
 
-function startsWith(prefix, str) {
+function startsWith (prefix, str) {
   console.assert(typeof str === 'string', 'expected string', str)
   return str.indexOf(prefix) === 0
 }
