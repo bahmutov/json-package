@@ -5,15 +5,15 @@ const { splitToWords, findFuzzyMatches, isFuzzyMatch } = require('./utils')
 describe('utils', () => {
   context('isFuzzyMatch', () => {
     it('flags :', () => {
-      expect(isFuzzyMatch('t:f')).to.be.true
+      expect(isFuzzyMatch('t:f')).to.equal(true)
     })
 
     it('flags -', () => {
-      expect(isFuzzyMatch('t:f')).to.be.true
+      expect(isFuzzyMatch('t:f')).to.equal(true)
     })
 
     it('skips =', () => {
-      expect(isFuzzyMatch('t=f')).to.be.false
+      expect(isFuzzyMatch('t=f')).to.equal(false)
     })
   })
 
@@ -102,7 +102,7 @@ describe('utils', () => {
 
     it('finds test-foo by t:f', () => {
       const scripts = {
-        'test': 'mocha',
+        test: 'mocha',
         'test-foo': 'mocha ./foo'
       }
       const matched = findFuzzyMatches('t:f', scripts)
