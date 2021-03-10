@@ -6,9 +6,6 @@
 [![NPM][json-package-icon] ][json-package-url]
 
 [![ci status][ci image]][ci url]
-[![dependencies][json-package-dependencies-image] ][json-package-dependencies-url]
-[![devdependencies][json-package-devdependencies-image] ][json-package-devdependencies-url]
-
 [![semantic-release][semantic-image] ][semantic-url]
 [![manpm](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
 [![standard style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
@@ -89,9 +86,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [json-package-url]: https://npmjs.org/package/json-package
 [ci image]: https://github.com/bahmutov/json-package/workflows/ci/badge.svg?branch=master
 [ci url]: https://github.com/bahmutov/json-package/actions
-[json-package-dependencies-image]: https://david-dm.org/bahmutov/json-package.png
-[json-package-dependencies-url]: https://david-dm.org/bahmutov/json-package
-[json-package-devdependencies-image]: https://david-dm.org/bahmutov/json-package/dev-status.png
-[json-package-devdependencies-url]: https://david-dm.org/bahmutov/json-package#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
