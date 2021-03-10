@@ -1,5 +1,4 @@
 /* global describe, context, it */
-const la = require('lazy-ass')
 const { expect } = require('chai')
 const { splitToWords, findFuzzyMatches } = require('./utils')
 

@@ -7,11 +7,12 @@ const help = [
   '    "jso v" === "cat package.json | grep version"'
 ].join('\n')
 
+const path = require('path')
 const jsonPackage = require('..').jsonPackage
 
 require('simple-bin-help')({
   minArguments: 3,
-  packagePath: __dirname + '/../package.json',
+  packagePath: path.join(__dirname, '..', 'package.json'),
   help: help,
   noExit: true,
   onFail: function () {
