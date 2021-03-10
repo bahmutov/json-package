@@ -27,6 +27,12 @@ const findFuzzyMatches = (str, scripts) => {
   const scriptNames = Object.keys(scripts)
   return scriptNames.filter(scriptName => {
     const scriptParts = splitToWords(scriptName)
+    if (parts.length > scriptParts.length) {
+      // if the script name has fewer words than the prefix words
+      // then for sure it is not what we are looking for
+      return false
+    }
+
     return parts.every((part, k) => {
       return startsWith(part, scriptParts[k])
     })

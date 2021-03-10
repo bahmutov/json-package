@@ -75,5 +75,15 @@ describe('utils', () => {
       const matched = findFuzzyMatches('c-r', scripts)
       expect(matched).to.deep.equal(['cy-run'])
     })
+
+    it('finds nothing', () => {
+      const scripts = {
+        'cypress:open': 'cypress open',
+        'cypress:run': 'cypress run'
+      }
+      // should not crash and return nothing
+      const matched = findFuzzyMatches('c:r:r', scripts)
+      expect(matched).to.deep.equal([])
+    })
   })
 })
