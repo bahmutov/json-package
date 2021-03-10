@@ -85,5 +85,14 @@ describe('utils', () => {
       const matched = findFuzzyMatches('c:r:r', scripts)
       expect(matched).to.deep.equal([])
     })
+
+    it('finds test-foo by t:f', () => {
+      const scripts = {
+        'test': 'mocha',
+        'test-foo': 'mocha ./foo'
+      }
+      const matched = findFuzzyMatches('t:f', scripts)
+      expect(matched).to.deep.equal(['test-foo'])
+    })
   })
 })
