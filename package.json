@@ -43,7 +43,6 @@
   },
   "homepage": "https://github.com/bahmutov/json-package#readme",
   "devDependencies": {
-    "check-more-types": "2.3.0",
     "git-issues": "1.2.0",
     "really-need": "1.7.2",
     "rocha": "1.6.1",
@@ -51,6 +50,7 @@
     "standard": "5.4.1"
   },
   "dependencies": {
+    "check-more-types": "2.24.0",
     "lazy-ass": "1.6.0",
     "findup": "0.1.5",
     "simple-bin-help": "1.4.0"
