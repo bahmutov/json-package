@@ -48,6 +48,11 @@ describe('utils', () => {
       const parts = splitToWords('c-r.')
       expect(parts).to.deep.equal(['c', 'r'])
     })
+
+    it('ignores . in the middle', () => {
+      const parts = splitToWords('c.r.')
+      expect(parts).to.deep.equal(['c.r'])
+    })
   })
 
   context('findFuzzyMatches', () => {
@@ -151,6 +156,24 @@ describe('utils', () => {
       }
       const matched = findFuzzyMatches('t:f', scripts)
       expect(matched).to.deep.equal(['test-foo'])
+    })
+
+    describe('stopper', () => {
+      it('matches the number of words', () => {
+        const scripts = {
+          cypress: 'cypress -help',
+          'cypress:open': 'cypress open',
+          'cypress:run': 'cypress run'
+        }
+        const matched = findFuzzyMatches('c-r.', scripts)
+        expect(matched, 'cypress:run matches c-r.').to.deep.equal(['cypress:run'])
+
+        const matched2 = findFuzzyMatches('cy:op.', scripts)
+        expect(matched2, 'cypress:open matches cy:op.').to.deep.equal(['cypress:open'])
+
+        const matched3 = findFuzzyMatches('c.', scripts)
+        expect(matched3, 'cypress matches c.').to.deep.equal(['cypress'])
+      })
     })
   })
 })

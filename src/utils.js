@@ -16,6 +16,8 @@ function matchesExactly (prefix, str) {
     sameLength(prefix, str)
 }
 
+const hasStopper = (str) => str.endsWith('.')
+
 const isFuzzyMatch = (str) => {
   // if the string includes our special word separators
   // then we will use "fuzzy" matching
@@ -24,21 +26,24 @@ const isFuzzyMatch = (str) => {
   }
   // if the user wants to end with specific suffix,
   // use "." at the end
-  if (str.endsWith('.')) {
+  if (hasStopper(str)) {
     return true
   }
   return false
 }
 
+const removeStopper = (str) => str.slice(0, str.length - 1)
+
 const splitToWords = (str) => {
-  if (str.endsWith('.')) {
-    str = str.slice(0, str.length - 1)
+  if (hasStopper(str)) {
+    str = removeStopper(str)
   }
   return str.split(/[-:]/g)
 }
 
 const findFuzzyMatches = (str, scripts) => {
   la(is.unemptyString(str), 'expected an unempty string', str)
+  const exactLength = hasStopper(str)
   const parts = splitToWords(str)
 
   const scriptNames = Object.keys(scripts)
@@ -47,6 +52,12 @@ const findFuzzyMatches = (str, scripts) => {
     if (parts.length > scriptParts.length) {
       // if the script name has fewer words than the prefix words
       // then for sure it is not what we are looking for
+      return false
+    }
+
+    if (exactLength && parts.length !== scriptParts.length) {
+      // by using "." at the end of the prefix we want the
+      // exact number of parts and then stop
       return false
     }
 
