@@ -58,8 +58,8 @@ describe('utils', () => {
 
     it('returns multiple matches without single', () => {
       const scripts = {
-        'cy': 'cypress open',
-        'cypress': 'cypress open',
+        cy: 'cypress open',
+        cypress: 'cypress open',
         'cypress:open': 'cypress open',
         'cypress:run': 'cypress run',
         'cypress:run:record': 'cypress run --record'
@@ -74,8 +74,8 @@ describe('utils', () => {
 
     it('returns all matches', () => {
       const scripts = {
-        'cy': 'cypress open',
-        'cypress': 'cypress open',
+        cy: 'cypress open',
+        cypress: 'cypress open',
         'cypress:open': 'cypress open',
         'cypress:run': 'cypress run',
         'cypress:run:record': 'cypress run --record'
