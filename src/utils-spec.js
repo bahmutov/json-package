@@ -17,6 +17,15 @@ describe('utils', () => {
     it('skips =', () => {
       expect(isFuzzyMatch('t=f')).to.equal(false)
     })
+
+    it('uses . at the end', () => {
+      expect(isFuzzyMatch('c-r.')).to.equal(true)
+      // means we ONLY expect "c" script to match
+      expect(isFuzzyMatch('c.')).to.equal(true)
+      // this is not a fuzzy match - there are no separators
+      // and the dot is NOT at the end
+      expect(isFuzzyMatch('c.e')).to.equal(false)
+    })
   })
 
   context('splitToWords', () => {
@@ -32,6 +41,11 @@ describe('utils', () => {
 
     it('splits by -', () => {
       const parts = splitToWords('c-r')
+      expect(parts).to.deep.equal(['c', 'r'])
+    })
+
+    it('removes . at the end', () => {
+      const parts = splitToWords('c-r.')
       expect(parts).to.deep.equal(['c', 'r'])
     })
   })

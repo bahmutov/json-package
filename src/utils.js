@@ -16,9 +16,26 @@ function matchesExactly (prefix, str) {
     sameLength(prefix, str)
 }
 
-const isFuzzyMatch = (str) => str.includes('-') || str.includes(':')
+const isFuzzyMatch = (str) => {
+  // if the string includes our special word separators
+  // then we will use "fuzzy" matching
+  if (str.includes('-') || str.includes(':')) {
+    return true
+  }
+  // if the user wants to end with specific suffix,
+  // use "." at the end
+  if (str.endsWith('.')) {
+    return true
+  }
+  return false
+}
 
-const splitToWords = (str) => str.split(/[-:]/g)
+const splitToWords = (str) => {
+  if (str.endsWith('.')) {
+    str = str.slice(0, str.length - 1)
+  }
+  return str.split(/[-:]/g)
+}
 
 const findFuzzyMatches = (str, scripts) => {
   la(is.unemptyString(str), 'expected an unempty string', str)
