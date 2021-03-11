@@ -6,10 +6,12 @@ describe('utils', () => {
   context('isFuzzyMatch', () => {
     it('flags :', () => {
       expect(isFuzzyMatch('t:f')).to.equal(true)
+      expect(isFuzzyMatch('t:')).to.equal(true)
     })
 
     it('flags -', () => {
-      expect(isFuzzyMatch('t:f')).to.equal(true)
+      expect(isFuzzyMatch('t-f')).to.equal(true)
+      expect(isFuzzyMatch('t-')).to.equal(true)
     })
 
     it('skips =', () => {
@@ -52,6 +54,34 @@ describe('utils', () => {
       }
       const matched = findFuzzyMatches('c:r', scripts)
       expect(matched).to.deep.equal(['cypress:run', 'cypress:run:record'])
+    })
+
+    it('returns multiple matches without single', () => {
+      const scripts = {
+        'cy': 'cypress open',
+        'cypress': 'cypress open',
+        'cypress:open': 'cypress open',
+        'cypress:run': 'cypress run',
+        'cypress:run:record': 'cypress run --record'
+      }
+      const matched = findFuzzyMatches('c:', scripts)
+      // not that "cy" and "cypress" are single workds
+      // so they are not in the returned list
+      expect(matched).to.deep.equal([
+        'cypress:open', 'cypress:run', 'cypress:run:record'
+      ])
+    })
+
+    it('returns all matches', () => {
+      const scripts = {
+        'cy': 'cypress open',
+        'cypress': 'cypress open',
+        'cypress:open': 'cypress open',
+        'cypress:run': 'cypress run',
+        'cypress:run:record': 'cypress run --record'
+      }
+      const matched = findFuzzyMatches('c', scripts)
+      expect(matched).to.deep.equal(Object.keys(scripts))
     })
 
     it('matches several letters', () => {
